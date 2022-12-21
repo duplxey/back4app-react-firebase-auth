@@ -1,7 +1,10 @@
 import {Alert, Box, Button, Container, Link, TextField, Typography} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 
 export default function Register() {
+
+  const navigate = useNavigate();
 
   const [error, setError] = useState("");
   const [email, setEmail] = useState("");

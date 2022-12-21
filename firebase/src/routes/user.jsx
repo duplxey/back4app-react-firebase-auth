@@ -1,14 +1,13 @@
 import {Button, Container, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {endSession, getSession, isLoggedIn} from "../storage/session";
+import {endSession, getSession, isLoggedIn} from "../session";
 
 export default function User() {
 
   let navigate = useNavigate();
 
   let [email, setEmail] = useState("");
-  let [accessToken, setAccessToken] = useState("");
 
   useEffect(() => {
     if (!isLoggedIn()) {
@@ -17,10 +16,9 @@ export default function User() {
 
     let session = getSession();
     setEmail(session.email);
-    setAccessToken(session.accessToken);
 
-    console.log("Your access token is: " + accessToken);
-  }, [navigate, email, accessToken]);
+    console.log("Your access token is: " + session.accessToken);
+  }, [navigate]);
 
   const onLogout = () => {
     endSession();

@@ -1,14 +1,14 @@
 import Parse from "parse/dist/parse";
 
 // Initialize Parse
-const PARSE_APPLICATION_ID = '2vToyMavA5CTVX4heB1yL2p2YmBDLRB39dIRfij4';
+const PARSE_APPLICATION_ID = '<your_parse_application_id>';
 const PARSE_HOST_URL = 'https://parseapi.back4app.com/';
-const PARSE_JAVASCRIPT_KEY = '3NDhd1yIu90OK9UkeAdRcR0gjOMA4TLd0Ikhp7p9';
+const PARSE_JAVASCRIPT_KEY = '<your_parse_javascript_key>';
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 Parse.serverURL = PARSE_HOST_URL;
 
-export const doUserRegistration = async (email, password) => {
-  return Parse.User.signUp(email, password);
+export const doUserRegistration = async (username, password) => {
+  return Parse.User.signUp(username, password);
 };
 
 export const doUserLogIn = async (username, password) => {

@@ -1,10 +1,12 @@
 import {Button, Container, Typography} from "@mui/material";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 export default function User() {
 
   let navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     // TODO: check if user is logged in and display the data
@@ -20,7 +22,7 @@ export default function User() {
         You're logged in as:
       </Typography>
       <Typography variant="h5" component="h1" textAlign="center" gutterBottom>
-        {/* TODO: display user's username */}
+        {email}
       </Typography>
       <Typography variant="p" component="p" textAlign="center" gutterBottom>
         Check the console for your (access/session) token.

@@ -7,7 +7,7 @@ export default function User() {
 
   let navigate = useNavigate();
 
-  let [user, setUser] = useState(null);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -17,8 +17,9 @@ export default function User() {
       }
 
       let user = await getUser();
-      setUser(user);
-      console.log(user.getSessionToken());
+      setEmail(user.getEmail());
+
+      console.log("Your session token is: " + user.getSessionToken());
     })();
   }, [navigate]);
 
@@ -33,7 +34,7 @@ export default function User() {
         You're logged in as:
       </Typography>
       <Typography variant="h5" component="h1" textAlign="center" gutterBottom>
-        {user != null && user.getEmail()}
+        {email}
       </Typography>
       <Typography variant="p" component="p" textAlign="center" gutterBottom>
         Check the console for your (access/session) token.

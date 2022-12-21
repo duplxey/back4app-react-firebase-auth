@@ -2,7 +2,7 @@ import {Alert, Box, Button, Container, Link, TextField, Typography} from "@mui/m
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {signInUser} from "../firebase";
-import {isLoggedIn, startSession} from "../storage/session";
+import {isLoggedIn, startSession} from "../session";
 
 export default function Login() {
 
